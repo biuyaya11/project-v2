@@ -9,7 +9,7 @@
           text-color="#fff"
           active-text-color="#ffd04b">
         <template v-for="(item, index) in menus">
-          <el-submenu index="index + '' " :key="index" v-if="!item.hidden" >
+          <el-submenu :index="index + ''" :key="index" v-if="!item.hidden" >
             <template slot="title">
               <i :class="item.iconClass"></i>
               <span>{{ item.name }}</span>
@@ -19,7 +19,6 @@
                 <i :class="child.iconClass"></i>
                 {{ child.name }}
               </el-menu-item>
-
             </el-menu-item-group>
           </el-submenu>
         </template>

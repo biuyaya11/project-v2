@@ -70,7 +70,6 @@ export default new Router({
                 },
             ]
         },
-
         {
             path:'/home',
             name:'数据分析',

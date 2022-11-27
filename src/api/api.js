@@ -1,5 +1,6 @@
 //项目中我们大多时候都会把队友的接口请求封装成api来调用
 import service from "../service";
+import qs from 'qs'
 
 //登陆接口
 export function login(data) {
@@ -27,4 +28,36 @@ export function studentDel(id) {
     })
 }
 
+//信息列表新增接口
+// export function info(data) {
+//     data = qs.stringify(data)
+//     return service({
+//         method: 'post',
+//         url: '/info',
+//         data
+//     })
+// }
 
+//信息列表新增和修改接口
+export function info(type, data) {
+    data = qs.stringify(data)
+    let obj = {method:type, url: '/info', data}
+    return service(obj)
+}
+
+//信息列表查询接口
+export function getInfo() {
+    return service({
+        method: 'get',
+        url: '/info',
+
+    })
+}
+//信息列表删除接口
+export function infoDel(id) {
+    return service({
+        method:'delete',
+        url: `/info/${id}`,  //拼接用·包？
+
+    })
+}
