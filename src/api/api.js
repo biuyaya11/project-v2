@@ -61,3 +61,19 @@ export function infoDel(id) {
 
     })
 }
+
+//数据概览接口
+export function dataView() {
+    return service({
+        method: 'get',
+        url: '/dataview'
+    })
+}
+
+//旅游地图接口
+export function travel( ) {
+    return service({
+        method: 'get',
+        url: '/travel',
+    })
+}
